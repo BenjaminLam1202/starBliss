@@ -44,7 +44,7 @@
 
 
 plot_starmap <- function(location,
-             date = today(),
+             date,
              style = c('black', 'green'),
              line1_text = location,
              line2_text = format(as.Date(date), "%B %d, %Y"),
