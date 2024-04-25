@@ -44,11 +44,11 @@
 
 
 plot_starmap <- function(location,
-             date,
-             style = c('black', 'green'),
-             line1_text = location,
-             line2_text = format(as.Date(date), "%B %d, %Y"),
-             line3_text=TRUE){
+       date,
+       style = c('black', 'green'),
+       line1_text = location,
+       line2_text = format(as.Date(date), "%B %d, %Y"),
+       line3_text=TRUE){
 
   # Using match.arg to avoid spelling errors with the argument specification
   style <- match.arg(style)
