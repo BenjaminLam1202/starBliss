@@ -44,11 +44,11 @@
 
 
 plot_starmap <- function(location,
-                         date = today(),
-                         style = c('black', 'green'),
-                         line1_text = location,
-                         line2_text = format(as.Date(date), "%B %d, %Y"),
-                         line3_text=TRUE){
+             date = today(),
+             style = c('black', 'green'),
+             line1_text = location,
+             line2_text = format(as.Date(date), "%B %d, %Y"),
+             line3_text=TRUE){
 
   # Using match.arg to avoid spelling errors with the argument specification
   style <- match.arg(style)
@@ -58,8 +58,11 @@ plot_starmap <- function(location,
   # Formatted date
   dt<- lubridate::ymd(date)
 
+  # Extracting time from date
+  time <- format(dt, "%H:%M:%S")
+
   # Force hour and timezone as MapsForMoments does
-  dt_tm <- lubridate::as_datetime(paste(dt, " 22:00:00"), tz = "UTC")
+  dt_tm <- lubridate::as_datetime(paste(dt, time), tz = "UTC")
 
   # Extract relevant latitude and longitude.
 
